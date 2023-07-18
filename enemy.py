@@ -18,3 +18,7 @@ class Enemy:
     def print(self):
         print(f"{self.enemy_name} Encountered!\n")
         self.__str__()
+
+
+Slime = Enemy("Green Slime")
+Slime.print()

@@ -5,6 +5,9 @@ class Player:
         self.health = 100
         self.lives = 3
 
+    def get_health(self):
+        return self.health
+
     def takes_damage(self, damage):
         print(f"{self.name} takes -{damage} HP damage!")
 
