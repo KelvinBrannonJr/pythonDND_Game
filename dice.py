@@ -2,13 +2,12 @@ import random
 
 
 class Dice:
-    def __int__(self, sides=6):
-        self.sides = sides
+    def __int__(self, side, sides):
+        self.side = 1
+        self.sides = 6
 
     def roll_dice(self):
-        min_side = 1
-        max_sides = 6
-        rand_roll = random.randint(min_side, max_sides)
+        rand_roll = random.randint(self.side, self.sides)
         print(f"You rolled: {rand_roll}")
         return rand_roll
 

@@ -1,5 +1,4 @@
-import player
-from player import Player
+from enemy import Enemy
 """
 OBJECTIVE
 - Set up the gameplay rules
@@ -13,13 +12,9 @@ OBJECTIVE
 
 class Game:
     def __init__(self):
-        is_dead = False
-        self.health = Player.get_health(player.sir_kingston)
-
-    def death(self):
-        if self.health <= 0:
-            is_dead = True
-            return self.game_over()
+        self.game_is_looping = True
+        self.is_dead = False
 
     def game_over(self):
-        return print("Game Over")
+        print("Game Over")
+        self.game_is_looping = False

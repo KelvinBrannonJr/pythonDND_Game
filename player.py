@@ -21,13 +21,16 @@ class Player:
         self.__str__()
         return atk_amount
 
+    def death(self):
+        if self.health <= 0:
+            print(f"{self.name} has died..")
+        return
+
     def print(self):
         print(f"Player {self.player} {self.name} is online!\n")
         self.__str__()
 
 
-sir_kingston = Player("Sir Kingston")
-sir_kingston.print()
 
 
 
