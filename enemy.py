@@ -2,6 +2,8 @@ class Enemy:
     def __init__(self, enemy_name):
         self.enemy_name = enemy_name
         self.enemy_health = 100
+        self.enemy_queue_number = 3
+        self.enemy_turn = False
 
     def get_enemy_health(self):
         return self.enemy_health
@@ -21,7 +23,6 @@ class Enemy:
     def enemy_death(self):
         if self.enemy_health <= 0:
             print(f"{self.enemy_name} was defeated!")
-        return
 
     def print(self):
         print(f"{self.enemy_name} Encountered!\n")

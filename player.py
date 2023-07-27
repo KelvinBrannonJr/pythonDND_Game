@@ -4,6 +4,8 @@ class Player:
         self.player = + 1
         self.health = 100
         self.lives = 3
+        self.player_queue_number = 1
+        self.player_turn = False
 
     def get_health(self):
         return self.health
@@ -24,7 +26,6 @@ class Player:
     def death(self):
         if self.health <= 0:
             print(f"{self.name} has died..")
-        return
 
     def print(self):
         print(f"Player {self.player} {self.name} is online!\n")
