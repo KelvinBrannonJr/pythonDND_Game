@@ -1,1 +1,2 @@
-# A Python Dungeon and Dragons style text game
+# A Python Dice and Dungeons text game
+

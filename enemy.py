@@ -24,6 +24,5 @@ class Enemy:
         if self.enemy_health <= 0:
             print(f"{self.enemy_name} was defeated!")
 
-    def print(self):
-        print(f"{self.enemy_name} Encountered!\n")
-        self.__str__()
+    def __str__(self):
+        return self.enemy_name
