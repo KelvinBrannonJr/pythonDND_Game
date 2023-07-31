@@ -8,19 +8,22 @@ class Player:
         self.player_turn = False
 
     def get_health(self):
+        print(self.health)
         return self.health
 
     def takes_damage(self, damage):
-        print(f"{self.player_name} takes -{damage} HP damage!")
+        if damage > 0:
+            print(f"{self.player_name} takes -{damage} HP damage!")
+            new_health = self.health - damage
+            print(f"{self.player_name} health {new_health} HP")
+            print(f"Player's health {new_health} HP")
+            return new_health
 
-        new_health = self.health - damage
-        print(f"{self.player_name} health {new_health} HP")
-        self.__str__()
-        return new_health
+        else:
+            return "That attack was very ineffective.."
 
     def attack(self, atk_amount):
-        print(f"{self.player_name} attacks!")
-        self.__str__()
+        print(f"{self.player_name} Attacks!")
         return atk_amount
 
     def death(self):

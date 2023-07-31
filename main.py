@@ -7,5 +7,3 @@ if __name__ == "__main__":
     while game.game_is_looping:
         hud.display_ui()
 
-        print("Game Over")
-        game.game_is_looping = False

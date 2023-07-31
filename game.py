@@ -1,4 +1,3 @@
-from enemy import Enemy
 """
 OBJECTIVE
 - Set up the gameplay rules
