@@ -15,5 +15,8 @@ class Game:
         self.is_dead = False
 
     def game_over(self):
+        print("You fought life with death..")
         print("Game Over")
         self.game_is_looping = False
+        exit()
+

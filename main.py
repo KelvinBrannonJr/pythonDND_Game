@@ -1,9 +1,8 @@
 from ui import UI
-from game import Game
+
+hud = UI()
 
 if __name__ == "__main__":
-    game = Game()
-    hud = UI()
-    while game.game_is_looping:
-        hud.display_ui()
+    hud.display_ui()
+
 

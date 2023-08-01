@@ -12,10 +12,9 @@ class Enemy:
     def enemy_take_damage(self, enemy_damage):
         if enemy_damage > 0:
             print(f"{self.enemy_name} takes -{enemy_damage} HP damage!")
-            new_enemy_health = self.enemy_health - enemy_damage
-            print(f"{self.enemy_name} health {new_enemy_health} HP\n")
-            print(f"Enemy's health {new_enemy_health} HP")
-            return new_enemy_health
+            self.enemy_health -= enemy_damage
+            print(f"{self.enemy_name} health {self.enemy_health} HP\n")
+            return self.enemy_health
 
         else:
             return "That attack was very ineffective.."
@@ -25,8 +24,7 @@ class Enemy:
         return enemy_atk_amount
 
     def enemy_death(self):
-        if self.enemy_health <= 0:
-            print(f"{self.enemy_name} was defeated!")
+        print(f"{self.enemy_name} was defeated!")
 
     def __str__(self):
         return self.enemy_name

@@ -14,10 +14,9 @@ class Player:
     def takes_damage(self, damage):
         if damage > 0:
             print(f"{self.player_name} takes -{damage} HP damage!")
-            new_health = self.health - damage
-            print(f"{self.player_name} health {new_health} HP")
-            print(f"Player's health {new_health} HP")
-            return new_health
+            self.health -= damage
+            print(f"{self.player_name} health {self.health} HP")
+            return self.health
 
         else:
             return "That attack was very ineffective.."
@@ -27,8 +26,7 @@ class Player:
         return atk_amount
 
     def death(self):
-        if self.health <= 0:
-            print(f"{self.player_name} has died..")
+        print(f"{self.player_name} has died..")
 
     def __str__(self):
         return self.player_name
