@@ -1,3 +1,10 @@
+"""
+OBJECTIVE
+- Add mechanic to allow player attacks to randomly miss
+- Add random range indexer for attack damage
+"""
+
+
 class Player:
     def __init__(self, player_name):
         self.player_name = player_name

@@ -1,3 +1,9 @@
+"""
+OBJECTIVE
+- Add mechanic to allow enemy attacks to randomly miss.
+"""
+
+
 class Enemy:
     def __init__(self, enemy_name):
         self.enemy_name = enemy_name
@@ -24,7 +30,7 @@ class Enemy:
         return enemy_atk_amount
 
     def enemy_death(self):
-        print(f"{self.enemy_name} was defeated!")
+        return print(f"{self.enemy_name} was defeated!")
 
     def __str__(self):
         return self.enemy_name

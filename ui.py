@@ -15,9 +15,9 @@ class UI:
         if self.player.player_name.player_turn:
             roll_dice = input("Roll dice? Y/N \n").lower()
             if roll_dice == 'y':
-                rand_roll = random.randint(1, 6)
-                print(f"{self.player.player_name} rolled: {rand_roll}")
-                return rand_roll
+                random_roll = random.randint(1, 6)
+                print(f"{self.player.player_name} rolled: {random_roll}")
+                return random_roll
             else:
                 print("You decided not to roll")
 
@@ -53,7 +53,7 @@ class UI:
             return self.player.takes_damage(enemy_atk_damage)
 
     def display_ui(self):
-        while self.player.health > 1:
+        while self.player.health >= 1:
             print(" " * 35)
             print("****** DICE AND DUNGEONS ******")
             print("=" * 35)
@@ -63,8 +63,11 @@ class UI:
                 print("=" * 35)
                 match user_command:
                     case "Atk":
-                        atk_dmg = self.player.attack(50)
-                        self.calculate_player_atk_to_enemy_damage(atk_dmg)
+                        random_atk_dmg = random.randint(1, self.enemy.enemy_health)
+                        if random_atk_dmg == self.enemy.enemy_health:
+                            print("Critical Hit!!!")
+                        final_player_atk_dmg = self.player.attack(random_atk_dmg)
+                        self.calculate_player_atk_to_enemy_damage(final_player_atk_dmg)
 
                     case "Flee":
                         print(f"Like a coward {self.player.player_name}, fled crying!")
@@ -72,8 +75,9 @@ class UI:
 
             elif self.enemy.enemy_turn:
                 print(f"{self.enemy.enemy_name} Enemy has taken the initiative!!")
-                enemy_atk_dmg = self.enemy.enemy_attack(50)
-                self.calculate_enemy_atk_to_player_damage(enemy_atk_dmg)
+                random_atk_dmg = random.randint(1, self.player.health)
+                final_enemy_atk_dmg = self.enemy.enemy_attack(random_atk_dmg)
+                self.calculate_enemy_atk_to_player_damage(final_enemy_atk_dmg)
 
             else:
                 print("Travel time with no encounters")
